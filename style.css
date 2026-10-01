@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#startScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(55, 48, 30, 0.3),
+      rgba(5, 5, 4, 0.97)
+    );
+
+  color: white;
+  transition: opacity 0.8s ease;
+}
+
+#startScreen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.title {
+  font-size: clamp(42px, 7vw, 90px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-align: center;
+
+  text-shadow:
+    0 0 20px rgba(255, 230, 170, 0.15);
+}
+
+.subtitle {
+  margin-top: 12px;
+
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  opacity: 0.5;
+  text-align: center;
+}
+
+#startButton {
+  margin-top: 55px;
+
+  padding: 14px 44px;
+
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.04);
+  color: white;
+
+  font-size: 14px;
+  letter-spacing: 0.3em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#startButton:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.65);
+}
+
+.controls {
+  margin-top: 30px;
+
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+
+  opacity: 0.35;
+  text-align: center;
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 20;
+
+  box-shadow:
+    inset 0 0 150px rgba(0,0,0,0.8);
+
+  opacity: 0.8;
+}
